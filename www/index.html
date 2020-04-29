@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- META -->
+        <meta charset="utf-8">
+
+        <preference name="android-build-tool" value="gradle" />
+        <!-- CSS -->
+        <!--<link rel="stylesheet" href="css/all.min.css">-->
+        <link type="text/css" rel="stylesheet" href="navigation.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- JS -->
+        <script src="cordova.js"></script>
+        <script src="barcodescanner.js"></script>
+        <script type="text/javascript" src="scripts/jquery.min.js"></script>
+        <script src="https://infomation-93c5.restdb.io/rest/_jsapi.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="navigation.js"></script>
+        <title>QR Scanner</title>
+    </head>
+    <body> 
+        <div id="nav">
+            <div class="icon-bar">
+                <a onclick="toggleNav()"> --- </a>
+            </div>
+            <div id="side-bar" class="sidenav">
+                <a href="index.html">Forside</a>
+                <a href="scoreboard.html">Topscore</a>
+                <a href="verdensmaal.html">Verdensmål</a>
+                <a href="program.html">Program</a>
+                <a href="news.html">Nyheder</a>
+                <a onclick="adminCheck()">Admin</a>
+            </div>
+        </div>
+
+        <h1 id="login" style="text-align: center"> Ikke logget ind</h1>
+        <p id="point">hhere</p>
+        <i class="fa fa-qrcode" style="font-size: 15em; position: fixed; top:50%; left:50%; margin-left: -0.4em; margin-top: -0.5em" onclick="scan()"></i>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="navigation.css">
+
+        <style>
+            .news {
+                display: -webkit-box;
+                margin: 0.2em;
+                overflow-y: hidden;
+                width: 100%; 
+                overflow: hidden;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+            }
+
+            .clicked{
+                -webkit-line-clamp: inherit;
+            }
+            img{
+                width: 100%
+            }
+        </style>
+
+        <script src="https://infomation-93c5.restdb.io/rest/_jsapi.js"></script>
+        <script type="text/javascript" src="scripts/jquery.min.js"></script>
+        <script type="text/javascript" src="navigation.js"></script>
+        <script type="text/javascript" src="scripts/collasible.js"></script>
+        <script src="scripts/news.js"></script>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <div id="nav">
+            <div class="icon-bar">
+                <a onclick="toggleNav()"> --- </a>
+            </div>
+            <div id="side-bar" class="sidenav">
+                <a href="index.html">Forside</a>
+                <a href="scoreboard.html">Topscore</a>
+                <a href="verdensmaal.html">Verdensmål</a>
+                <a href="program.html">Program</a>
+                <a href="news.html">Nyheder</a>
+                <a onclick="adminCheck()">Admin</a>
+            </div>
+        </div>
+        <div id="news">
+        </div>
+    </body>
+
+    <script>
+
+    </script>
+</html>

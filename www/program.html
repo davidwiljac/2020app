@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="En interaktiv guide til at komme godt i gang med Brackets.">
+        <link rel="stylesheet" href="navigation.css">
+        <style>
+            .tidsbox{
+                height: 1.2em;
+                width: 100%;
+            }
+            #tidsplan div:nth-child(odd){background-color: #f2f2f2;}
+            #tidsplan div:hover {background-color: #ddd;}
+
+        </style>
+
+        <script src="https://infomation-93c5.restdb.io/rest/_jsapi.js"></script>
+        <script src="scripts/program.js"></script>
+        <script type="text/javascript" src="scripts/jquery.min.js"></script>
+        <script type="text/javascript" src="navigation.js"></script>
+
+    </head>
+    <body onload="getData()">
+        <div id="nav">
+            <div class="icon-bar">
+                <a onclick="toggleNav()"> --- </a>
+            </div>
+            <div id="side-bar" class="sidenav">
+                <a href="index.html">Forside</a>
+                <a href="scoreboard.html">Topscore</a>
+                <a href="verdensmaal.html">Verdensmål</a>
+                <a href="program.html">Program</a>
+                <a href="news.html">Nyheder</a>
+                <a onclick="adminCheck()">Admin</a>
+            </div>
+        </div>
+        <select id="unit" style="display: inherit" onchange="changeUnit()">
+            <option>Bæver</option>
+            <option>Ulve</option>
+            <option>Junior</option>
+            <option>Storspejder</option>
+            <option>Senior/Rover</option>
+        </select>
+        <select id="day" style="display: inherit" onchange="changeDay()">
+            <option>Lørdag</option>
+            <option>Søndag</option>
+            <option>Mandag</option>
+            <option>Tirsdag</option>
+            <option>Onsdag</option>
+            <option>Torsdag</option>
+            <option>Fredag</option>
+            <option>Lørdag</option>
+        </select>
+        <div style="display: inline-block; float: left; clear: both; margin-right: 10px">
+            <div class="tidsbox">6:00</div>
+            <div class="tidsbox">6:30</div>
+            <div class="tidsbox">7:00</div>
+            <div class="tidsbox">7:30</div>
+            <div class="tidsbox">8:00</div>
+            <div class="tidsbox">8:30</div>
+            <div class="tidsbox">9:00</div>
+            <div class="tidsbox">9:30</div>
+            <div class="tidsbox">10:00</div>
+            <div class="tidsbox">10:30</div>
+            <div class="tidsbox">11:00</div>
+            <div class="tidsbox">11:30</div>
+            <div class="tidsbox">12:00</div>
+            <div class="tidsbox">12:30</div>
+            <div class="tidsbox">13:00</div>
+            <div class="tidsbox">13:30</div>
+            <div class="tidsbox">14:00</div>
+            <div class="tidsbox">14:30</div>
+            <div class="tidsbox">15:00</div>
+            <div class="tidsbox">15:30</div>
+            <div class="tidsbox">16:00</div>
+            <div class="tidsbox">16:30</div>
+            <div class="tidsbox">17:00</div>
+            <div class="tidsbox">17:30</div>
+            <div class="tidsbox">18:00</div>
+            <div class="tidsbox">18:30</div>
+            <div class="tidsbox">19:00</div>
+            <div class="tidsbox">19:30</div>
+            <div class="tidsbox">20:00</div>
+            <div class="tidsbox">20:30</div>
+            <div class="tidsbox">21:00</div>
+            <div class="tidsbox">21:30</div>
+            <div class="tidsbox">22:00</div>
+            <div class="tidsbox">22:30</div>
+            <div class="tidsbox">23:00</div>
+        </div>
+                <p style="float: left" id="loader">Loader</p>
+
+        <div id="tidsplan" style="display: inline-block; float: left; width: 50%">
+        </div>
+    </body>
+
+    <script>
+
+    </script>
+</html>

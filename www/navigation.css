@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif" !important;
+	background-color: #f5cba2;
+}
+.icon-bar {
+	position: fixed;
+    left: 5%;
+    bottom: 0px;
+    width: 5em;
+    height: 5em;
+	z-index: 2;
+    overflow: auto;
+}
+
+.icon-bar a {
+    float: left;
+    text-align: center;
+    padding: 1.58vh 0;
+    transition: all 0.3s ease;
+    color: #000;
+    font-size: 2.25em;
+}
+.active {
+    background-color: #f37236;
+}
+.sidenav {
+    position: fixed;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ab774f;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+.sidenav a {
+    padding: 0.16em 0.32em 0.16em 1.28em;
+    text-decoration: none;
+    font-size: 1.5em/*1.5625em*/;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.bold {
+	font-weight: bold;
+}

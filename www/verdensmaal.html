@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!doctype html>
+<html>
+    <head>
+        <!-- META -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+        <!-- CSS -->
+        <link type="text/css" rel="stylesheet" href="css/all.min.css">
+        <link type="text/css" rel="stylesheet" href="navigation.css">
+        <!--plugins-->
+        <plugin name="com.attendee.barcodegenerator" spec="~1" />
+        <!-- JS -->
+        <script type="text/javascript" src="cordova.js"></script>   
+        <script type="text/javascript" src="scripts/jquery.min.js"></script>
+        <script src="https://infomation-93c5.restdb.io/rest/_jsapi.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="navigation.js"></script> 
+        <script type="text/javascript" src="scripts/scoreboard.js"></script>
+        <script type="text/javascript" src="scripts/verdensmaal.js"></script>
+        <title>QR Scanner</title>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+
+            img{
+                width: 32%;
+                table-layout: auto;
+            }
+
+            .collapsible {
+                color: white;
+                cursor: pointer;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+                background: none;
+            }
+
+            .content {
+                max-height: 0;
+                width: 97%;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+                background-color: #f1f1f1;
+            }
+        </style>
+    </head>
+    <body onload="getData()">   
+        <div id="nav">
+            <div class="icon-bar">
+                <a onclick="toggleNav()"> --- </a>
+            </div>
+            <div id="side-bar" class="sidenav">
+                <a href="index.html">Forside</a>
+                <a href="scoreboard.html">Topscore</a>
+                <a href="verdensmaal.html">Verdensmål</a>
+                <a href="program.html">Program</a>
+                <a href="news.html">Nyheder</a>
+                <a onclick="adminCheck()">Admin</a>
+            </div>        </div>
+        <div class="row">
+            <div class="column; collapsible">
+                <img src="verdensmaal_billeder/1_1.png" id="maal1" onclick="displayText(this)">
+                <img src="verdensmaal_billeder/2_1.png" id="maal2" onclick="displayText(this)">
+                <img src="verdensmaal_billeder/3_1.png" id="maal3" onclick="displayText(this)">
+            </div>
+            <div class="content"><p>Hej</p></div>
+
+            <div class="column; collapsible">
+                <img src="verdensmaal_billeder/4_1.png" id="maal4" onclick="displayText(this)">
+                <img src="verdensmaal_billeder/5_1.png" id="maal5" onclick="displayText(this)">
+                <img src="verdensmaal_billeder/6_1.png" id="maal6" onclick="displayText(this)">
+            </div>
+            <div class="content"><p>Hej</p></div>
+
+            <div class="column; collapsible">
+                <img src="verdensmaal_billeder/7_1.png" id="maal7" onclick="displayText(this)">
+                <img src="verdensmaal_billeder/8_1.png" id="maal8" onclick="displayText(this)">
+                <img src="verdensmaal_billeder/9_1.png" id="maal9" onclick="displayText(this)">
+            </div>
+            <div class="content"><p>Hej</p></div>
+
+            <div class="column; collapsible">
+                <img src="verdensmaal_billeder/10_1.png" id="maal10" onclick="displayText(this)">
+                <img src="verdensmaal_billeder/11_1.png" id="maal11" onclick="displayText(this)">
+                <img src="verdensmaal_billeder/12_1.png" id="maal12" onclick="displayText(this)">
+            </div>
+            <div class="content"><p>Hej</p></div>
+
+            <div class="column; collapsible">
+                <img src="verdensmaal_billeder/13_1.png" id="maal13" onclick="displayText(this)">
+                <img src="verdensmaal_billeder/14_1.png" id="maal14" onclick="displayText(this)">
+                <img src="verdensmaal_billeder/15_1.png" id="maal15" onclick="displayText(this)">
+            </div>
+            <div class="content"><p>Hej</p></div>
+
+            <div class="column; collapsible" style="text-align: center">
+                <img src="verdensmaal_billeder/16_1.png" id="maal16" onclick="displayText(this)">
+                <img src="verdensmaal_billeder/17_1.png" id="maal17" onclick="displayText(this)">
+            </div>
+            <div class="content"><p>Hej</p></div>
+            <br><br><br><br>
+        </div>
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight){
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    } 
+                });
+            }
+        </script>
+    </body>
+</html>

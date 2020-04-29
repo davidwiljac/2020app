@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!doctype html>
+<html>
+    <head>
+        <!-- META -->
+        <meta charset="utf-8">
+        <!-- CSS -->
+        <link type="text/css" rel="stylesheet" href="css/all.min.css">
+        <link type="text/css" rel="stylesheet" href="navigation.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--plugins-->
+        <plugin name="com.attendee.barcodegenerator" spec="~1" />
+        <!-- JS -->
+        <script type="text/javascript" src="cordova.js"></script>   
+        <script type="text/javascript" src="scripts/jquery.min.js"></script>
+        <script src="https://infomation-93c5.restdb.io/rest/_jsapi.js"></script>
+        <script type="text/javascript" src="navigation.js"></script>
+        <script type="text/javascript" src="scripts/admin.js"></script>
+
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+            }
+
+            .center-all {
+                padding-left: 50%;
+                padding-right: 50%;
+                padding-bottom: 10%;
+                margin-left: -1.5em;
+                margin-bottom: 1em;
+                width: 16px;
+                height: 16px;
+            }
+        </style>
+        <title>QR Scanner</title>
+    </head>
+    <body>   
+        <div id="nav">
+            <div class="icon-bar">
+                <a onclick="toggleNav()"> --- </a>
+            </div>
+            <div id="side-bar" class="sidenav">
+                <a href="index.html">Forside</a>
+                <a href="scoreboard.html">Topscore</a>
+                <a href="verdensmaal.html">Verdensmål</a>
+                <a href="program.html">Program</a>
+                <a href="news.html">Nyheder</a>
+                <a onclick="adminCheck()">Admin</a>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 15%; font-size: 2em"><b>Giv point til et hold</b></p>
+        <div class="center-all">
+            <i onclick="givePoint()" class="fa fa-plus" style="font-size: 3em"></i>
+        </div>
+        <hr>
+        <h1 id="løbName"></h1>
+        <h3 id="postName"></h3>
+        <p id="postBes"></p>
+    </body>
+</html>

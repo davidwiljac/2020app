@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- META -->
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src *; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+        <!-- CSS -->
+        <link type="text/css" rel="stylesheet" href="css/all.min.css">
+        <link type="text/css" rel="stylesheet" href="navigation.css">
+        <!--plugins-->
+        <plugin name="com.attendee.barcodegenerator" spec="~1" />
+        <!-- JS -->
+        <script type="text/javascript" src="scripts/jquery.min.js"></script>
+        <script src="https://infomation-93c5.restdb.io/rest/_jsapi.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="navigation.js"></script>
+        <title>QR Scanner</title>
+    </head>
+    <body onload="getData()">  
+        <div id="nav">
+            <!-- NAVIGATION -->
+        </div>
+
+        <h1 id="login"> Ikke logget ind</h1>
+        Click scan button to scan the QR code: <button onclick="scan()">Scan</button>
+    </body>
+</html>

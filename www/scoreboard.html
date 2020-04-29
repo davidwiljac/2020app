@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!doctype html>
+<html>
+    <head>
+        <!-- META -->
+        <meta charset="utf-8">
+        <!-- CSS -->
+        <link type="text/css" rel="stylesheet" href="css/all.min.css">
+        <link type="text/css" rel="stylesheet" href="navigation.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--plugins-->
+        <plugin name="com.attendee.barcodegenerator" spec="~1" />
+        <!-- JS -->
+        <script type="text/javascript" src="cordova.js"></script>   
+        <script type="text/javascript" src="scripts/jquery.min.js"></script>
+        <script src="https://infomation-93c5.restdb.io/rest/_jsapi.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="navigation.js"></script> 
+        <script type="text/javascript" src="scripts/scoreboard.js"></script>
+
+        <style>
+            .collapsible {
+                background-color: transparent;
+                color: black;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+            }
+
+            .active, .collapsible:hover {
+                background-color: #555;
+            }
+
+            .collapsible:after {
+                content: '\25BD';
+                color: black;
+                font-weight: bold;
+                float: right;
+                margin-left: 5px;
+            }
+
+            .content {
+                padding: 0 18px;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+                background-color: #f1f1f1;
+            }
+        </style>
+
+        <title>QR Scanner</title>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+    </head>
+    <body onload="selectType()">   
+        <div id="nav">
+            <div class="icon-bar">
+                <a onclick="toggleNav()"> --- </a>
+            </div>
+            <div id="side-bar" class="sidenav">
+                <a href="index.html">Forside</a>
+                <a href="scoreboard.html">Topscore</a>
+                <a href="verdensmaal.html">Verdensmål</a>
+                <a href="program.html">Program</a>
+                <a href="news.html">Nyheder</a>
+                <a onclick="adminCheck()">Admin</a>
+            </div>
+        </div>
+        <select id="pointType" onchange="selectType()">
+            <option value="Løb">Løb</option>
+            <option value="CO2">CO2</option>
+        </select>
+        <select id="selector" onchange="selectKat(); selectKatCO2()">
+            <option value="enhed">Enhed</option>
+            <option value="gruppe">Gruppe</option>
+        </select>
+        <select id="selector2" onchange="selectSpes(); selectSpesCO2()">
+        </select>
+        <table id="score">
+            <tr>
+                <th id="identifier">hej</th>
+                <th>Score</th>
+            </tr>
+        </table>
+    </body>
+</html>
