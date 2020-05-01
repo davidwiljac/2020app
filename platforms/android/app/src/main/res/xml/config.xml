@@ -7,7 +7,7 @@
     <feature name="BarcodeScanner">
         <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
     </feature>
-    <name>HelloWorld</name>
+    <name>2020 Lejrbogsapp</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>

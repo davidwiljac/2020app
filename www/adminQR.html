@@ -18,25 +18,21 @@
         <script type="text/javascript" src="navigation.js"></script>
         <script type="text/javascript" src="scripts/qrcode.js"></script>
         <script type="text/javascript" src="scripts/admin.js"></script>
-        <style>
-            html, body {
-                width: 100%;
-                height: 100%;
-            }
+        <title>QR Scanner</title>
 
-            .center-all {
-                padding-left: 50%;
-                padding-right: 50%;
-                padding-bottom: 10%;
-                margin-left: -1.5em;
-                margin-bottom: 1em;
-                width: 16px;
-                height: 16px;
+        <style>
+            .child {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .back{
+                font-size: 3em;
             }
         </style>
-        <title>QR Scanner</title>
     </head>
-    <body>   
+    <body onload="generate()">   
         <div id="nav">
             <div class="icon-bar">
                 <a onclick="toggleNav()"> --- </a>
@@ -50,15 +46,7 @@
                 <a onclick="adminCheck()">Admin</a>
             </div>
         </div>
-
-        <p style="text-align: center; margin-top: 15%; font-size: 2em"><b>Giv point til et hold</b></p>
-        <div class="center-all">
-            <i onclick="givePoint()" class="fa fa-plus" style="font-size: 3em"></i>
-        </div>
-        <hr>
-        <h1 class="collapsible" id="løbName">Loader</h1>
-        <h3 id="postName">Loader</h3>
-        <p id="postBes">Loader</p>
+        <i onclick="window.location.href = &quot;admin.html &quot;" class="fa fa-arrow-left back"></i>
+        <div class="child" id="qrcode" style="text-align: center"></div>
     </body>
-
 </html>

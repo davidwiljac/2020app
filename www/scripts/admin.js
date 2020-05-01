@@ -1,8 +1,9 @@
 var fullData;
-
 //Load beskrivelse og post navn
 
 getData();
+
+
 function setup(){
     var postIndex = localStorage.getItem("postIndex").split(",");
     postIndex[0] = parseInt(postIndex[0]);
@@ -11,22 +12,32 @@ function setup(){
     var postName = fullData.poster[postIndex[0]].poster[postIndex[1]][0];
     var postBes = fullData.poster[postIndex[0]].poster[postIndex[1]][2];
 
-    document.getElementById("løbName").innerHTML = løbName;
-    document.getElementById("postName").innerHTML = postName;
-    document.getElementById("postBes").innerHTML = postBes;
+    if(document.getElementById("løbName") != undefined){
+        document.getElementById("løbName").innerHTML = løbName;
+        document.getElementById("postName").innerHTML = postName;
+        document.getElementById("postBes").innerHTML = postBes;
+    }
 }
 function givePoint(){
     var point = prompt("Hvor mange point skal holdet have?");
     point = parseInt(point, 10);
-    generate("add,"+point+localStorage.getItem("post"));
+    //generate("add,"+point+localStorage.getItem("post"));
+    localStorage.setItem("QRText", "add,"+point+localStorage.getItem("post"));
+    window.location.href = "adminQR.html";
 }
 
-function generate(text){
+function generate(){/*
     cordova.plugins.barcodeScanner.encode(cordova.plugins.barcodeScanner.Encode.TEXT_TYPE, text, function(success) {
         alert("encode success: " + success);
     }, function(fail) {
         alert("encoding failed: " + fail);
+    });*/
+    var text = localStorage.getItem("QRText");
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width : window.innerWidth * 0.7,
+        height : window.innerWidth * 0.7
     });
+    qrcode.makeCode(text);
 }
 
 function findTeam(name){

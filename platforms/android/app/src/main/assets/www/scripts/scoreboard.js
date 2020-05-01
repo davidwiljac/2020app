@@ -69,7 +69,8 @@ function selectKat(){
                         gruppeNum++;
                     }
                 }
-                point = Math.round(point/gruppeNum);
+                point = point/gruppeNum;
+                point = point.toFixed(1);
                 grupperScore.push([grupper[i],point]);
                 gruppeNum = 0;
             }
@@ -187,7 +188,7 @@ function selectKatCO2(){
             for(var i = 0; i < finalGrupper.length; i++){
                 var row = scoreBoard.insertRow(scoreBoard.lenth);
                 var collapsibleButton = document.createElement("button");
-                collapsibleButton.innerHTML = finalGrupper[i][0] + ": " + finalGrupper[i][1] + " point";                
+                collapsibleButton.innerHTML = finalGrupper[i][0] + ": " + finalGrupper[i][1].toFixed(1) + " point";                
                 collapsibleButton.setAttribute("class", "collapsible");
 
                 var content = document.createElement("div");
@@ -196,7 +197,7 @@ function selectKatCO2(){
 
                 for(var u = 0; u < fullData.hold[i].CO2.length; u++){
                     var listElement = document.createElement("li");
-                    listElement.innerHTML = CO2Poster[u] + ": " + finalGrupper[i][2][u];
+                    listElement.innerHTML = CO2Poster[u] + ": " + finalGrupper[i][2][u].toFixed(1);
                     list.appendChild(listElement);
                 }
                 content.appendChild(list);
